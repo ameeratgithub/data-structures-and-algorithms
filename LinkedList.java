@@ -114,7 +114,7 @@ public class LinkedList {
         return first == null;
     }
     public void reverse(){
-        if(isEmpty()) throw new IllegalArgumentException();
+        if(isEmpty()) return;
 
         Node p=first;
         Node c=first.next;
@@ -127,7 +127,32 @@ public class LinkedList {
         last=first;
         last.next=null;
         first=p;
-
     }
 
+    public void getKthFromTheEnd(int k){
+        // 3 Kth from the end in list 1->2->3->4->5->6->7 means 5th node
+        // can be achieved by using two pointers having distance of k-1
+        // k must be greater than 0
+        // k = 1 means both pointers are same node
+
+        if(isEmpty() || k<1) throw new IllegalStateException();
+
+        Node p=first;
+        Node n=p;
+
+        // Setting distance between p and n pointers
+        for(int i=0;i<k-1;i++){
+            n=n.next;
+            if(n==null) // if k is too large
+                throw new IllegalArgumentException();
+        }
+
+        while(n.next!=null){
+            n=n.next;
+            p=p.next;
+        }
+
+        System.out.println(p.value);
+
+    }
 }

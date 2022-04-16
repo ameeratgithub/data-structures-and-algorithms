@@ -2,6 +2,9 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args){
+        testLinkedList();
+    }
+    private static void testLinkedList(){
         LinkedList linkedList=new LinkedList();
         linkedList.addFirst(0);
         linkedList.addLast(10);

@@ -4,3 +4,4 @@ This repository has implementations of different type of data structures and com
 
 - Arrays
 - LinkedLists
+- Stack
